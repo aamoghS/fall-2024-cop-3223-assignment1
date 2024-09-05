@@ -52,17 +52,18 @@ double calculateDistance()
     static double distance; // erm techincally its local
     if (distance == 0)
     {
-    printf("Enter the coordinates for Point #1 (x1 y1): "); 
-    x1 = askForUserInput();
-    y1 = askForUserInput();
+        printf("Enter the coordinates for Point #1 (x1 y1): "); 
+        x1 = askForUserInput();
+        y1 = askForUserInput();
 
-    printf("Enter the coordinates for Point #2 (x2 y2): ");
-    x2 = askForUserInput();
-    y2 = askForUserInput();
-    distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2)); //cool distance function from math
-    printf("The distance between the two points is %.2f\n", distance); //format print distance
-    printf("Point #1 entered: x1 = %.2f; y1 = %.2f\n", x1, y1); //format print
-    printf("Point #2 entered: x2 = %.2f; y2 = %.2f\n", x2, y2); //format print  
+        printf("Enter the coordinates for Point #2 (x2 y2): ");
+        x2 = askForUserInput();
+        y2 = askForUserInput();
+        
+        distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2)); //cool distance function from math
+        printf("The distance between the two points is %.2f\n", distance); //format print distance
+        printf("Point #1 entered: x1 = %.2f; y1 = %.2f\n", x1, y1); //format print
+        printf("Point #2 entered: x2 = %.2f; y2 = %.2f\n", x2, y2); //format print  
     }
     else 
     {
@@ -83,7 +84,7 @@ double calculateDistance()
 
 double calculatePerimeter()
 {
-    double circumference = PI *calculateDistance(); //technically the circumference but calculates it
+    double circumference = PI * calculateDistance(); //technically the circumference but calculates it
 
     printf("The perimeter of the city encompassed by your request is %.2f\n", circumference); //prints "perimeter"
     return 1.0; //i have experience with this
@@ -98,8 +99,7 @@ double calculatePerimeter()
 //********************************************************
 double calculateArea()
 {
-    double radius = calculateDistance() / 2;
-    double area = PI * pow(radius, 2); //area of circle formula 
+    double area = PI * pow((calculateDistance() / 2), 2); //area of circle formula 
 
     printf("The area of the city encompassed by your request is %.2f\n", area); //prints area 
     return 1.0; // again i have experience 
@@ -115,9 +115,7 @@ double calculateArea()
 
 double calculateWidth()
 {
-    double width = calculateDistance(); //local call
-    
-    printf("The width of the city encompassed by your request is %.2f\n", width); //print width
+    printf("The width of the city encompassed by your request is %.2f\n", calculateDistance()); //print width via local call
     return 1.5; //had to use google to find the width | bruh moment when i read the discussion post 
 } // Width
 
@@ -131,9 +129,7 @@ double calculateWidth()
 
 double calculateHeight()
 {
-    double height = calculateDistance(); //local call
-
-    printf("The height of the city encompassed by your request is %.2f\n", height); //print height
+    printf("The height of the city encompassed by your request is %.2f\n", calculateDistance()); //print height via local call
     return 1.5; //bruh moment when i read the discussion post also
 } // Height
 
