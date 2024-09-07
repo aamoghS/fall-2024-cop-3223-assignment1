@@ -52,12 +52,12 @@ double calculateDistance()
     static double distance; // erm techincally its local
     if (distance == 0)
     {
-        printf("Enter the coordinates for Point #1 (x1 y1): "); 
+        printf("Enter the coordinates for Point #1 (x1 x2): "); 
         x1 = askForUserInput();
-        y1 = askForUserInput();
-
-        printf("Enter the coordinates for Point #2 (x2 y2): ");
         x2 = askForUserInput();
+
+        printf("Enter the coordinates for Point #2 (y1 y2): ");
+        y1 = askForUserInput();
         y2 = askForUserInput();
         
         distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2)); //cool distance function from math
