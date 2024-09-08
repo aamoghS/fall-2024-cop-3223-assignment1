@@ -143,7 +143,8 @@ double calculateHeight()
 
 int main(int argc, char **argv)
 {
-    calculatePerimeter(); // calling the functions to follow rules
+    calculateDistance();// calling the functions to follow rules
+    calculatePerimeter(); 
     calculateArea();
     calculateWidth();
     calculateHeight();
